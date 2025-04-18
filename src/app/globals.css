@@ -1,13 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #111827;  /* gray-900 */
+  --foreground: #ffffff;
+  --primary: #3B82F6;    /* blue-500 */
+  --primary-dark: #1E40AF; /* blue-800 */
+  --secondary: #1F2937;  /* gray-800 */
+  --accent: #60A5FA;     /* blue-400 */
+  --muted: #9CA3AF;      /* gray-400 */
+  --border: #374151;     /* gray-700 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -23,4 +34,29 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar for the theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Custom selection color */
+::selection {
+  background: var(--primary);
+  color: var(--foreground);
 }
